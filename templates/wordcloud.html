@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klasifikasi Sentimen Ulasan Wisata Religi Walisongo</title>
+</head>
+<body>
+    <ul>
+        <li><a href="{{ url_for('index_prediksi') }}">Prediksi</a></li>
+        <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+    </ul>
+    <h3>Word Cloud</h3>
+    <div class="visual">
+        <div class="flex-container2">
+            <div>
+                <img src="{{ url_for('static', filename='general.png')}}">
+                <h5>Word Cloud dari Ulasan Keseluruhan</h5>
+            </div>
+            <div>
+                <img src="{{ url_for('static', filename='positif.png')}}">
+                <h5>Word Cloud dari Ulasan Label Positif</h5>
+            </div>
+            <div>
+                <img src="{{ url_for('static', filename='negatif.png')}}">
+                <h5>Word Cloud dari Ulasan Label Negatif</h5>
+            </div>
+            <div>
+                <img src="{{ url_for('static', filename='netral.png')}}">
+                <h5>Word Cloud dari Ulasan Label Netral</h5>
+            </div>
+        </div>
+    </div>    
+</body>
+</html>

@@ -1,0 +1,274 @@
+body{
+    background:#2F3148;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #587099;
+  }
+
+  li {
+    float: left;
+  }
+
+  li a {
+    display: block;
+    color: #F6F4F5;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  li a:hover {
+    background-color: #8689AC;
+  }
+  h3{
+    margin-top: 5%;
+    margin-bottom: -5%;
+    text-align: center;
+    color: #F6F4F5;
+  }
+  h5{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    text-align: center;
+    color: #F6F4F5;
+  }
+  h6{
+    margin-top: 5%;
+    margin-bottom: -5%;
+    text-align: center;
+    color: #F6F4F5;
+  }
+  h4{
+    margin-top: 5%;
+    margin-bottom: -5%;
+    text-align: center;
+    color: #F6F4F5;
+  }
+  p{
+    color: #2F3148;
+  }
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8%;
+}
+
+.flex-container > div {
+    background-color: #587099;
+    width: 500px;
+    margin: 30px;
+    text-align: center;
+    font-size: 30px;
+    overflow: hidden;
+}
+
+.visual{
+    background: #587099;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 10%;
+    width: 80%;
+    height: fit-content;
+}
+
+img{
+    width: 100%;
+    height: auto;
+    padding: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    justify-content: center;
+    max-width: 100%; /* Mencegah gambar melampaui lebar kolom */
+    height: auto; /* Memastikan gambar proporsional */
+}
+
+.for-map{
+    background: #587099;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    width: 100%;
+    height: fit-content;
+}
+
+.map{
+    width: 1000px;
+    height: 500px;
+    margin-left: 12%;
+    margin-bottom: 15%;
+    margin-top: 10%;
+}
+
+.contact-form{
+    background: #587099;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    width: 50%;
+}
+.contact-form .form-control{
+    border-radius:1rem;
+}
+.contact-image{
+    text-align: center;
+}
+.contact-image img{
+    border-radius: 6rem;
+    width: 11%;
+    margin-top: -3%;
+    transform: rotate(29deg);
+}
+.contact-form form{
+    padding: 14%;
+}
+.contact-form form .row{
+    margin-bottom: -7%;
+}
+.contact-form h3{
+    text-align: center;
+    color: #F6F4F5;
+}
+.contact-form .btnContact {
+    width: 50%;
+    border: none;
+    border-radius: 1rem;
+    padding: 1.5%;
+    background: #dc3545;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+}
+.btnContactSubmit
+{
+    width: 100%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    color: #2F3148;
+    background-color: #F6F4F5;
+    border: none;
+    cursor: pointer;
+}
+.popup-image {
+    width: 150%;
+    height: 200%;
+}
+.custom-popup {
+    width: auto;
+    height: auto;
+}
+.btn{
+    width: 40%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    color: #F6F4F5;
+    background-color:#F6F4F5;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10%;
+}
+.flex-container2 {
+  display: grid; /* Mengganti menjadi grid container */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Mengatur jumlah kolom dan lebar kolom */
+  gap: 30px; /* Mengatur jarak antara item-grid */
+  width: fit-content;
+  margin-top: 10%;
+  margin-bottom: 5%;
+  align-items: center;
+  justify-content: center;
+  margin-left: 25%;
+}
+
+.flex-container2 > div {
+  margin-top: 5%;
+  background-color: #587099;
+  /* Menghapus width: 500px; */
+  text-align: center;
+  font-size: 30px;
+  overflow: hidden;
+}
+.flex-container3 {
+  display: grid; /* Mengganti menjadi grid container */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Mengatur jumlah kolom dan lebar kolom */
+  gap: 30px; /* Mengatur jarak antara item-grid */
+  width: fit-content;
+  margin-top: 10%;
+  margin-bottom: 5%;
+  align-items: center;
+  justify-content: center;
+  margin-left: 13%;
+}
+
+.flex-container3 > div {
+  margin-top: 5%;
+  background-color: #587099;
+  /* Menghapus width: 500px; */
+  text-align: center;
+  font-size: 30px;
+  overflow: hidden;
+}
+
+.container1 {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Gaya umum untuk tabel */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.data-table th, .data-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.data-table th {
+  background-color: #f2f2f2;
+}
+
+.data-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Gaya untuk dropdown */
+#table-selector {
+  margin-right: 10px;
+  padding: 5px;
+  font-size: 16px;
+}
+
+/* Gaya untuk kontainer */
+.container1 {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 5%;
+  padding: 20px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
+
+.selector {
+  margin: 20px;
+}
+
+#sunanImage {
+  text-align: center;
+  display: none;
+}
+
+#sunanImage img {
+  max-width: 100%;
+  height: auto;
+}

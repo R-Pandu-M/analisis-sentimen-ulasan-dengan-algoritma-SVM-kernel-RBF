@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Klasifikasi Sentimen Ulasan Wisata Religi Walisongo</title>
+</head>
+<body>
+    <ul>
+        <li><a href="{{ url_for('index_prediksi') }}">Prediksi</a></li>
+        <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+    </ul>
+    <h3>Dashboard</h3>
+    <br>
+    <h6>Data diambil dari ulasan Wisata Religi Walisongo pada tahun 2020 - 2022</h6>
+    <div class="flex-container">
+        <div>
+            <h4>Word Cloud</h4>
+            <br>
+            <h5>Diambil dari ulasan keseluruhan</h5>
+            <br>
+            <button id="myBtn1" class="btn"><a href="{{ url_for('wordcloud') }}">Detail</a></button>
+        </div>
+        <div>
+            <h4>Time Series</h4>
+            <br>
+            <h5>Diambil berdasarkan bulan di mana ulasan dibuat</h5>
+            <br>
+            <button id="myBtn2" class="btn"><a href="{{ url_for('timeseries') }}">Detail</a></button>
+        </div> 
+    </div>
+    <div id="map" class="container map"></div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map').setView([-7.491667, 110.004444], 7);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        //Sunan Ampel
+        var marker1 = L.marker([-7.22967826117595, 112.74248373907407]).addTo(map);
+        var imagePath1 = "{{ url_for('static', filename='ampel.png') }}";
+        marker1.bindPopup('<p>Ulasan Sunan Ampel</p><img src="' + imagePath1 + '" alt="Gambar" class="popup-image">', { className: 'custom-popup'});
+              
+
+        //Sunan Bonang
+        var marker2 = L.marker([-6.894675555658618, 112.06333203788175]).addTo(map);
+        var imagePath2 = "{{ url_for('static', filename='bonang.png') }}";
+        marker2.bindPopup('<p>Ulasan Sunan Bonang</p><img src="' + imagePath2 + '" alt="Gambar" class="popup-image">', { className: 'custom-popup'});
+    
+        //Sunan Drajat
+        var marker3 = L.marker([-6.884047814855961, 112.38928508139682]).addTo(map);
+        var imagePath3 = "{{ url_for('static', filename='drajat.png') }}";
+        marker3.bindPopup('<p>Ulasan Sunan Drajat</p><img src="' + imagePath3 + '" alt="Gambar" class="popup-image">', { className: 'custom-popup'});
+        
+        //Sunan Giri
+        var marker4 = L.marker([-7.168181744281457, 112.63127334174384]).addTo(map);
+        var imagePath4 = "{{ url_for('static', filename='giri.png') }}";
+        marker4.bindPopup('<p>Ulasan Sunan Giri</p><img src="' + imagePath4 + '" alt="Gambar" class="popup-image">', { className: 'custom-popup'});
+
+        //Sunan Maulana Malik Ibrahim (Gresik)
+        var marker5 = L.marker([-7.1600600685843325, 112.65652771698302]).addTo(map);
+        var imagePath5 = "{{ url_for('static', filename='gresik.png') }}";
+        marker5.bindPopup('<p>Ulasan Sunan Maulana Malik Ibrahim</p><img src="' + imagePath5 + '" alt="Gambar" class="popup-image">', { className: 'custom-popup'});
+
+        //Sunan Gunung Jati
+        var marker6 = L.marker([-6.670947757008726, 108.54014026604955]).addTo(map);
+        var imagePath6 = "{{ url_for('static', filename='gunung jati.png') }}";
+        marker6.bindPopup('<p>Ulasan Sunan Gunung Jati</p><img src="' + imagePath6 + '" alt="Gambar" class="popup-image">', { className: 'custom-popup'});
+
+        //Sunan Kalijaga
+        var marker7 = L.marker([-6.8962207079414926, 110.64772630838088]).addTo(map);
+        var imagePath7 = "{{ url_for('static', filename='kalijaga.png') }}";
+        marker7.bindPopup('<p>Ulasan Sunan Kalijaga</p><img src="' + imagePath7 + '" alt="Gambar" class="popup-image">', { className: 'custom-popup'});
+
+        //Sunan Kudus
+        var marker8 = L.marker([-6.803898918284954, 110.83224195702384]).addTo(map);
+        var imagePath8 = "{{ url_for('static', filename='kudus.png') }}";
+        marker8.bindPopup('<p>Ulasan Sunan Kudus</p><img src="' + imagePath8 + '" alt="Gambar" class="popup-image">', { className: 'custom-popup'});
+
+        //Sunan Muria
+        var marker9 = L.marker([-6.665881936109584, 110.89925836181847]).addTo(map);
+        var imagePath9 = "{{ url_for('static', filename='muria.png') }}";
+        marker9.bindPopup('<p>Ulasan Sunan Muria</p><img src="' + imagePath9 + '" alt="Gambar" class="popup-image">', { className: 'custom-popup'});
+    </script>
+    <h4 style="color: #2F3148;">Contoh Ulasan</h4>
+    <br>
+    <div class="container1">
+        <select id="table-selector" onchange="fetchData()">
+            <option value="ampel">Sunan Ampel</option>
+            <option value="bonang">Sunan Bonang</option>
+            <option value="drajat">Sunan Drajat</option>
+            <option value="giri">Sunan Giri</option>
+            <option value="gresik">Sunan Maulana Malik Ibrahim</option>
+            <option value="gunung_jati">Sunan Gunung Jati</option>
+            <option value="kalijaga">Sunan Kalijaga</option>
+            <option value="kudus">Sunan Kudus</option>
+            <option value="Muria">Sunan Muria</option>
+        </select>
+        <table class="data-table" id="data-table">
+            <thead>
+                <tr>
+                    <th>Review</th>
+                    <th>Label Predicted</th>
+                    <th>Actual Label</th>
+                </tr>
+            </thead>
+            <tbody id="data-body">
+            </tbody>
+        </table>
+    </div>
+    <script>
+        async function fetchData(){
+            try {
+            const selectedTable = document.getElementById('table-selector').value;
+            const response = await fetch(`/api/data/${selectedTable}`);
+            const data = JSON.parse(await response.text());
+            const dataBody = document.getElementById('data-body');
+            dataBody.innerHTML = '';
+
+            data.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item['Review']}</td>
+                    <td>${item['Label Predicted']}</td>
+                    <td>${item['Actual Label']}</td>
+                `;
+                dataBody.appendChild(row);
+            });
+        } catch (error) {
+            console.error('Error', error);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', fetchData)
+    </script>  
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+</body>
+</html>

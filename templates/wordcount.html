@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klasifikasi Sentimen Ulasan Wisata Religi Walisongo</title>
+</head>
+<body>
+    <ul>
+        <li><a href="{{ url_for('index_prediksi') }}">Prediksi</a></li>
+        <li><a href="{{ url_for('visual') }}">Visualisasi</a></li>
+        <li><a href="{{ url_for('wordcount') }}">Word Count</a></li>
+    </ul>
+    <h3>Word Count Per Label</h3>
+    <div class="container visual">
+        <div class="container img">
+            <img src="{{ url_for('static', filename='general.png') }}" alt="Gambar">
+            <p>Word Count Secara General</p>
+        </div>
+        <div class="container img">
+            <img src="{{ url_for('static', filename='netral.png') }}" alt="Gambar">
+            <p>Word Count Label Netral</p>
+        </div>
+        <div class="container img">
+            <img src="{{ url_for('static', filename='negatif.png') }}" alt="Gambar">
+            <p>Word Count Label Negatif</p>
+        </div>
+        <div class="container img">
+            <img src="{{ url_for('static', filename='positif.png') }}" alt="Gambar">
+            <p>Word Count Label Positif</p>
+        </div>
+    </div>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>       
+</body>
+</html>

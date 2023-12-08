@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klasifikasi Sentimen Ulasan Wisata Religi Walisongo</title>
+</head>
+<body>
+    <ul>
+        <li><a href="{{ url_for('index_prediksi') }}">Prediksi</a></li>
+        <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+    </ul>
+    <h3>Time Series</h3>
+    <!--<div class="selector">
+        <label for="sunanSelect">Pilih Sunan:</label>
+        <select id="sunanSelect">
+            <option value="ts_gresik.png">Sunan Maulana Malik Ibrahim</option>
+            <option value="ts_ampel.png">Sunan Ampel</option>
+            <option value="ts_bonang.png">Sunan Bonang</option>
+            <option value="ts_drajat.png">Sunan Drajat</option>
+            <option value="ts_kudus.png">Sunan Kudus</option>
+            <option value="ts_giri.png">Sunan Giri</option>
+            <option value="ts_kalijaga.png">Sunan Kalijaga</option>
+            <option value="ts_muria.png">Sunan Muria</option>
+            <option value="ts_gunung jati.png">Sunan Gunung Jati</option>
+        </select>
+    </div>
+
+    <div class="visual">
+        <div id="sunanImage">
+            <img src="" alt="Sunan Image">
+            <h5></h5>
+        </div>
+    </div>-->
+
+<!--<script>
+        const sunanSelect = document.getElementById('sunanSelect');
+        const sunanImage = document.getElementById('sunanImage');
+        const sunanImageTag = sunanImage.querySelector('img');
+        const sunanName = sunanImage.querySelector('h5');
+
+        sunanSelect.addEventListener('change', () => {
+            const selectedSunan = sunanSelect.value;
+            const sunanText = sunanSelect.options[sunanSelect.selectedIndex].text;
+
+            sunanImageTag.src = `{{ url_for('static', filename='${selectedSunan}') }}`;
+            sunanName.textContent = sunanText;
+            sunanImage.style.display = 'block';
+        });
+    </script>-->
+
+    <div class="visual">
+        <div class="flex-container3">
+            <div>
+                <img src="{{ url_for('static', filename='ts_gresik.png')}}">
+                <h5>Sunan Maulana Malik Ibrahim</h5>
+            </div>
+            <div>
+                <img src="{{ url_for('static', filename='ts_ampel.png')}}">
+                <h5>Sunan Ampel</h5>
+            </div>
+            <div>
+                <img src="{{ url_for('static', filename='ts_bonang.png')}}">
+                <h5>Sunan Bonang</h5>
+            </div>
+            <div>
+                <img src="{{ url_for('static', filename='ts_drajat.png')}}">
+                <h5>Sunan Drajat</h5>
+            </div>
+            <div>
+                <img src="{{ url_for('static', filename='ts_kudus.png')}}">
+                <h5>Sunan Kudus</h5>
+            </div>
+            <div>
+                <img src="{{ url_for('static', filename='ts_giri.png')}}">
+                <h5>Sunan Giri</h5>
+            </div>
+            <div>
+                <img src="{{ url_for('static', filename='ts_kalijaga.png')}}">
+                <h5>Sunan Kalijaga</h5>
+            </div>
+            <div>
+                <img src="{{ url_for('static', filename='ts_muria.png')}}">
+                <h5>Sunan Muria</h5>
+            </div>
+            <div>
+                <img src="{{ url_for('static', filename='ts_gunung jati.png')}}">
+                <h5>Sunan Gunung Jati</h5>
+            </div>
+        </div>
+    </div>  
+</body>
+</html>
